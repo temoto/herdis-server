@@ -1,0 +1,8 @@
+#!/bin/bash
+
+runhaskell Setup.hs clean
+runhaskell Setup.hs configure
+runhaskell Setup.hs build
+
+cmd=dist/build/herdis-server/herdis-server
+$cmd +RTS -N -s || $cmd +RTS -s

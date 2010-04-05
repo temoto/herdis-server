@@ -1,0 +1,21 @@
+Name:    herdis
+Version: 0.0.1
+License: MIT
+License-File: LICENSE
+Author: Sergey Shepelev <temotor@gmail.com>
+Maintainer: Sergey Shepelev <temotor@gmail.com>
+Synopsis: Toy clone of Redis database in Haskell.
+Description: TODO
+Category: Database
+
+Build-Type:         Simple
+Cabal-Version:   >= 1.2
+Extra-Source-Files: README
+
+Library
+  Exposed-Modules: Database.HerdisServer.Server
+  Build-Depends:   attoparsec, base, bytestring, containers, mtl >= 1.0, network, parallel, parsec, QuickCheck, stm, utf8-string
+
+Executable herdis-server
+  Main-is: Database/HerdisServer/Main.hs
+  GHC-Options: -O2 -auto-all -prof

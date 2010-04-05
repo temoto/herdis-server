@@ -1,0 +1,29 @@
+Each test consists of several build configurations.
+Each configuration was run 3 times and you see average time in seconds. Deviations were around 0.1-0.3 sec.
+
+My machine: Intel Core2 Duo T8100, DDR2 RAM 667MHz, Linux 2.6.32-11 SMP x86_64
+
+
+Test2: single connect, 100K GET unknown-key
+    threaded: 15.7
+    threaded, -O2: 15.6
+    no flags: 10.0
+    -O2: 9.8
+    par: 18.0
+    par, -O2: 18.1
+    par, -O2, -fvia-C: 17.9
+
+par results obviously include -threaded.
+
+Test3: 10 simult. connects, 10K GET unknown-key
+    par, -O2, -fvia-C: 13.5
+    -O2: 9.0
+    threaded, -O2: 13.0
+
+Test4: 200 simult. connects, 500 GET unknown-key
+    threaded, -O2: 13.7
+    par, -O2: 13.8
+
+Test set nil 2: single connect, 100K SET foo nil
+    par, -O2: 19.1
+
